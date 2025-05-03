@@ -1,0 +1,11 @@
+{
+  "name": "microservice_project",
+  "version": "1.0.0",
+  "description": "A Backend microservoce-project task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhinav Aggarwal",
+  "license": "ISC"
+}
