@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 const { DB_Name } = require("./utils");
 require("dotenv").config();
 
+const mongoURI = `${process.env.MONGODB_URI}/${DB_Name}?retryWrites=true&w=majority`;
+
 const connectDB = async () => {
     try{
         // mongoose returns the object
-        // let connectioninstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_Name}`);
-        let connectioninstance = await mongoose.connect(`mongodb+srv://abhidev:XGWC6XrZAxp0gem7@cluster0.wdctn1h.mongodb.net/${DB_Name}`);
-        console.log("MongoDb Connected");
-        console.log("Connection Host:", connectioninstance.connection.host);
-        console.log("Connection Name:", mongoose.connection.name);
+        const conn = await mongoose.connect(mongoURI);
+
+        console.log(`MongoDB connected: ${conn.connection.host}`);
     }
     catch(e) {
         console.log("Mongodb Connection Failed ->" , e);

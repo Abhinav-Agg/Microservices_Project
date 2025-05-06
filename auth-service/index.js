@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const authRouter = require("./routes/authroutes");
+const authRouter = require("./routes/authroute");
 const PORT = 5001;
 
 app.use(express.json());

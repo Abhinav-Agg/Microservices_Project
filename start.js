@@ -1,17 +1,14 @@
 const { spawn } = require("child_process");
 const path = require("path");
+require("dotenv").config();
 
-function runService(name, servicePath, entryFile, envFile = ".env") {
+function runService(name, servicePath, entryFile) {
   const fullPath = path.join(__dirname, servicePath);
   const child = spawn(
     "nodemon",
     [entryFile],
     {
       cwd: fullPath,
-      env: {
-        ...process.env, // inherit existing env vars
-        DOTENV_CONFIG_PATH: path.join(fullPath, envFile),
-      },
       shell: true
     }
   );
@@ -30,5 +27,6 @@ function runService(name, servicePath, entryFile, envFile = ".env") {
 }
 
 // Run auth-service and api-gateway
-runService("api-gateway", "./api-gateway", "index.js");
+runService("user-service", "./user-service", "index.js");
 runService("auth-service", "./auth-service", "index.js");
+runService("api-gateway", "./api-gateway", "index.js");
