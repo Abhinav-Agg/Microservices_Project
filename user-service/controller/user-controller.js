@@ -55,7 +55,6 @@ const createUser = asyncHandler(async(req, res) => {
         userResponse["AutoWalletDetails"] = autocreatedWalletDetails;
 
     } catch (error) {
-        console.error("Error creating user DB:", error);
         res.status(500).json({ "ErrorMsg": "Error while creating user DB" });
     }
     

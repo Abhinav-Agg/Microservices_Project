@@ -7,7 +7,6 @@ const login = async (req, res) => {
     
         if(!userLogin || !password) return res.status(401).json({"ErrrMsg" : "Fields are Empty"});
     
-        //const token = ""; // Getting Constant error becuase with const once value is assigned can't be change.
         const jwtsecret = process.env.JWT_Secret;
     
         const jwtOptions = {expiresIn : "1h"};

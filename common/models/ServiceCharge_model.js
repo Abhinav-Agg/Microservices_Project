@@ -14,8 +14,7 @@ const serviceChargeSchema = new mongoose.Schema(
     },
     slab: {
       type: String,
-      required: true,
-      // Example format: "50_1000_2.5_rupees/1001_5000_5_rupees"
+      required: true
     },
   },
   {
