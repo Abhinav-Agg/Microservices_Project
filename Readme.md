@@ -11,7 +11,12 @@ This project is built using **Node.js** and **MongoDB**, structured into multipl
 
 - Node.js >= 16
 - MongoDB Atlas URI
-- A `.env` file in the root directory for shared configuration
+- Create a .env file in the root directory with the following keys:
+  ```env
+  PORT=your_port
+  MONGODB_URI=your_mongo_uri
+  DB_NAME=your_database_name
+  JWT_SECRET=your_jwt_secret
 
 ## 🚀 Getting Started
 
@@ -25,10 +30,3 @@ npm install
 ### Step 2: Run All the Services
 ```Use the provided start.js script to run all services
 npm run dev
-
-## Note :->
-Use below keys are must be in the env file.
-PORT
-MONGODB_URI
-DB_NAME
-JWT_SECRET  # For Auth Service
