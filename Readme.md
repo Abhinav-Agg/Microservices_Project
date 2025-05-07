@@ -27,7 +27,6 @@ Run the following command inside each microservice folder:
 ```bash
 npm install
 
-```Service
 ### Step 2: Run All the Services
 -Use the provided start.js script to run all services
 npm run dev
